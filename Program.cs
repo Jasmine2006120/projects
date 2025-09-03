@@ -1,33 +1,22 @@
 ﻿using SplashKitSDK;
-
 using static SplashKitSDK.SplashKit;
 
 class Program
 {
-    public static void Main()
+    static void Main()
     {
-        Window window = new Window("Cute Bunny", 800, 600);
-
+        Window window = new Window("Chitkara Logo", 600, 400);
         while (!window.CloseRequested)
         {
-            SplashKit.ProcessEvents();
-            SplashKit.ClearScreen(Color.White);
-            SplashKit.FillCircle(Color.Yellow, 400, 300, 100); 
-            SplashKit.FillCircle(Color.Black, 380, 280, 10);
-            SplashKit.FillCircle(Color.Black, 420, 280, 10);
-            SplashKit.FillEllipse(Color.Pink, 370, 330, 40, 30);
-            SplashKit.FillCircle(Color.Black, 350, 210, 30);
-            SplashKit.FillCircle(Color.Black, 440, 210, 30);
-            SplashKit.FillCircle(Color.Yellow, 400, 500, 100);
-            SplashKit.FillCircle(Color.Black, 400, 500, 50);
-
-
-            
-
-           
-            
-            SplashKit.RefreshScreen(60);
+            ProcessEvents();
+            ClearScreen(Color.White);
+            SplashKit.FillRectangle(Color.Red, 100, 50, 300, 300);
+            SplashKit.FillRectangle(Color.White, 160, 230, 60, 60);
+            SplashKit.FillRectangle(Color.White, 160, 180, 100, 25);
+            SplashKit.FillRectangle(Color.White, 260, 180, 25, 110);
+            SplashKit.FillRectangle(Color.White, 160, 120, 170, 25);
+            SplashKit.FillRectangle(Color.White, 320, 120, 25, 170);
+            RefreshScreen(60);
         }
     }
 }
-
