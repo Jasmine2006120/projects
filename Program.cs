@@ -1,22 +1,64 @@
-﻿using SplashKitSDK;
-using static SplashKitSDK.SplashKit;
+﻿using static SplashKitSDK.SplashKit;
+using static System.Convert;
+int count = 0;
+int Total = 0; 
+double Average;
+double Min = 0;
+double Max = 0;
+int value;
+WriteLine("Welcome to  stats calculator!");
+Write("Enter a value: ");
+value = ToInt32(ReadLine());
 
-class Program
+do
 {
-    static void Main()
+    count = count + 1;
+    Total = Total + value;
+    Average = Total / count;
+    if (count == 1)
     {
-        Window window = new Window("Chitkara Logo", 600, 400);
-        while (!window.CloseRequested)
-        {
-            ProcessEvents();
-            ClearScreen(Color.White);
-            SplashKit.FillRectangle(Color.Red, 100, 50, 300, 300);
-            SplashKit.FillRectangle(Color.White, 160, 230, 60, 60);
-            SplashKit.FillRectangle(Color.White, 160, 180, 100, 25);
-            SplashKit.FillRectangle(Color.White, 260, 180, 25, 110);
-            SplashKit.FillRectangle(Color.White, 160, 120, 170, 25);
-            SplashKit.FillRectangle(Color.White, 320, 120, 25, 170);
-            RefreshScreen(60);
-        }
+        Min = value;
+        Max = value;
     }
-}
+    else if (value < Min)
+    {
+        Min = value;
+
+    }
+    else if (value > Max)
+    {
+        Max = value;
+
+    }
+
+    WriteLine("Count: " + count);
+    WriteLine("Total: " + Total);
+    WriteLine("Average: " + Average);
+    WriteLine("Min: " + Min);
+    WriteLine("Max: " + Max);
+    Write("Add another value[y/n]: ");
+         if (ReadLine() == "y")
+        {
+             
+             Write("Enter a value: ");
+             value = ToInt32(ReadLine());
+
+
+             continue;
+         }
+         else
+         {
+              Write("The code ends.");
+              break;
+         }
+ 
+ } while (ReadLine() != "n");
+
+ 
+
+
+
+
+        
+
+        
